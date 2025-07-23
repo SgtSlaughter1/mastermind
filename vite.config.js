@@ -7,6 +7,7 @@ export default defineConfig({
         laravel({
             input: 'resources/js/app.js',
             refresh: true,
+            buildDirectory: 'build', // optional but explicit
         }),
         vue({
             template: {
@@ -17,4 +18,11 @@ export default defineConfig({
             },
         }),
     ],
+    build: {
+        outDir: 'public/build', // ensure static assets are placed correctly
+        manifest: true,
+        rollupOptions: {
+            input: 'resources/js/app.js',
+        },
+    },
 });
