@@ -13,12 +13,11 @@ RUN apk add --no-cache \
     oniguruma-dev \
     icu-dev \
     libzip-dev \
-    mysql-client \
     nodejs \
     npm \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
-        pdo_mysql \
+        pdo_pgsql \
         zip \
         gd \
         intl \
