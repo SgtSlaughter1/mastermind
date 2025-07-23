@@ -17,7 +17,7 @@ Route::get('/', function () {
         'products' => $products,
         'categories' => $categories,
     ]);
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('products', ProductController::class);
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+Route::resource('products', ProductController::class)->except(['show']);
 
 require __DIR__.'/auth.php';

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Support\Facades\Route;
 
 class ProductController extends Controller
 {
@@ -13,8 +14,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('category')->paginate(10);
-        return response()->json($products);
+        $products = Product::with('category')->paginate(12);
+        return inertia('Products/Index', [
+            'products' => $products,
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+        ]);
     }
 
     /**
@@ -52,7 +57,11 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::with('category')->findOrFail($id);
-        return response()->json($product);
+        return inertia('Products/Show', [
+            'product' => $product,
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+        ]);
     }
 
     /**

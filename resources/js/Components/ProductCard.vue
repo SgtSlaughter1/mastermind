@@ -25,7 +25,7 @@ defineProps({
                 <span v-else-if="product.availability === 'unavailable'" class="inline-block px-2 py-1 text-xs bg-yellow-100 text-yellow-800 rounded">Unavailable</span>
                 <span v-else class="inline-block px-2 py-1 text-xs bg-red-100 text-red-800 rounded">Discontinued</span>
             </div>
-            <Link :href="`/products/${product.slug}`" class="mt-4 px-4 py-2 bg-[#FF2D20] text-white rounded hover:bg-[#e62a1c] transition text-center">View Details</Link>
+            <Link :href="`/products/${product.id}`" class="mt-4 px-4 py-2 bg-[#FF2D20] text-white rounded hover:bg-[#e62a1c] transition text-center">View Details</Link>
         </div>
     </div>
 </template>
