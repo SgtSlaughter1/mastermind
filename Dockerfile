@@ -15,6 +15,7 @@ RUN apk add --no-cache \
     libzip-dev \
     nodejs \
     npm \
+    postgresql-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
         pdo_pgsql \
