@@ -71,7 +71,7 @@ onMounted(() => {
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50 min-h-screen">
         <Navbar :can-login="canLogin" :can-register="canRegister" :auth-user="$page.props.auth?.user" />
         <section class="flex flex-col items-center justify-center py-16 bg-gradient-to-r from-[#FF2D20]/10 to-[#FF2D20]/5">
-            <h1 class="text-4xl font-extrabold mb-4 text-black dark:text-white">Welcome to GadgetStore</h1>
+            <h1 class="text-4xl font-extrabold mb-4 text-black dark:text-white">Welcome to Mastermind Gadgets</h1>
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Your one-stop shop for the latest gadgets and accessories</p>
             <Link :href="route('products.index')" class="px-6 py-3 bg-[#FF2D20] text-white rounded shadow hover:bg-[#e62a1c] transition">Shop Now</Link>
         </section>
@@ -105,7 +105,7 @@ onMounted(() => {
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-white dark:bg-zinc-900 rounded-lg shadow p-6 flex flex-col items-center">
                     <span class="text-4xl mb-2">⭐️⭐️⭐️⭐️⭐️</span>
-                    <p class="text-gray-700 dark:text-gray-300 mb-2 text-center">"Great selection and fast delivery! Highly recommend GadgetStore."</p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-2 text-center">"Great selection and fast delivery! Highly recommend Mastermind Gadgets."</p>
                     <span class="font-semibold text-black dark:text-white">- Alex J.</span>
                 </div>
                 <div class="bg-white dark:bg-zinc-900 rounded-lg shadow p-6 flex flex-col items-center">
@@ -133,7 +133,7 @@ onMounted(() => {
             </form>
         </section>
         <footer class="py-8 text-center text-sm text-black dark:text-white/70 mt-10">
-            &copy; {{ new Date().getFullYear() }} GadgetStore. All rights reserved.
+            &copy; {{ new Date().getFullYear() }} Mastermind Gadgets. All rights reserved.
         </footer>
     </div>
 </template>
